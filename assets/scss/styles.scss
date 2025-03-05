@@ -564,3 +564,11 @@ body {
 body.dark-theme {
     background: var(--dark-gradient); /* Gradiente oscuro cuando se activa el tema oscuro */
 }
+
+/*========== STYLES FOR DIVIDER ==========*/
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--first-color);
+    margin: 2rem 0; /* Espaciado superior e inferior */
+}
