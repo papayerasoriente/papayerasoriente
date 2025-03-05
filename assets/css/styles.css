@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*===== VARIABLES CSS =====*/
@@ -61,6 +62,10 @@ body.dark-theme {
   --text-color: #C7D1CC;
   --body-color: #1D2521;
   --container-color: #27302C;
+}
+
+body.dark-theme .home {
+  --body-color: #ec0f0f;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -229,9 +234,34 @@ img {
 }
 
 /*========== HOME ==========*/
+.home {
+  position: relative; /* Necesario para posicionar el SVG de forma absoluta */
+  overflow: hidden; /* Evita que el SVG se desborde */
+  /* Estilos para el SVG */
+}
+.home svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  background-image: linear-gradient(to bottom, rgba(243, 243, 243, 0.86), #e4ffd8);
+  z-index: 1; /* Asegura que el SVG esté detrás del contenido */
+}
 .home__container {
+  position: relative; /* Necesario para posicionar el contenido sobre el SVG */
   height: calc(100vh - var(--header-height));
   align-content: center;
+  z-index: 2; /* Asegura que el contenido esté sobre el SVG */
+}
+.home__data {
+  background-color: --body-color; /* Fondo semitransparente (blanco al 70%) */
+  padding: 2rem; /* Añade un poco de espacio interno */
+  border-radius: 1rem; /* Bordes redondeados */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 .home__title {
   font-size: var(--biggest-font-size);
